@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://wcfservicetest.org/Service1" elementFormDefault="qualified" targetNamespace="http://wcfservicetest.org/Service1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="InsertUserDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userInfo" nillable="true" type="tns:UserDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="UserDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="User_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="time_now" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserDetails" nillable="true" type="tns:UserDetails" />
+  <xs:element name="InsertUserDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertUserDetailsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userInfo" nillable="true" type="tns:UserDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateUserDetailsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getusercount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getusercountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getusercountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ksoapAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="num1" nillable="true" type="tns:testadd" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="testadd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="number_1" type="xs:int" />
+      <xs:element minOccurs="0" name="number_2" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="testadd" nillable="true" type="tns:testadd" />
+  <xs:element name="ksoapAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ksoapAddResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addParam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="num1" type="xs:int" />
+        <xs:element minOccurs="0" name="num2" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addParamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addParamResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_name">timeClockAndroid</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="user1">User1</string>
+    <string name="user2">User2</string>
+    <string name="user3">User3</string>
+    <string name="signin">SignIn</string>
+    <string name="signout">SignOut</string>
+    <string name="user">UserName: </string>
+    
+
+</resources>

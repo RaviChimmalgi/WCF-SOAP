@@ -1,0 +1,40 @@
+package com.example.timeclockandroid;
+
+import java.io.IOException;
+import java.util.Date;
+
+import org.ksoap2.serialization.Marshal;
+import org.ksoap2.serialization.PropertyInfo;
+import org.ksoap2.serialization.SoapSerializationEnvelope;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlSerializer;
+
+/**
+ * 
+ * @author Vladimir
+ * Used to marshal Dates - crucial to serialization for SOAP
+ */
+public class MarshalDate implements Marshal
+{
+
+        public Object readInstance(XmlPullParser parser, String namespace, String name, 
+                PropertyInfo expected) throws IOException, XmlPullParserException {
+            
+            return IsoDate.stringToDate(parser.nextText(), IsoDate.DATE_TIME);
+            
+            
+        }
+
+
+        public void register(SoapSerializationEnvelope cm) {
+             cm.addMapping(cm.xsd, "dateTime", Date.class, this);
+            
+        }
+
+
+        public void writeInstance(XmlSerializer writer, Object obj) throws IOException {
+             writer.text(IsoDate.dateToString((Date) obj, IsoDate.DATE_TIME));
+            }
+    
+}

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://wcfservicetest.org/Service1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://wcfservicetest.org/Service1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://wcfservicetest.org/Service1/Imports">
+      <xsd:import schemaLocation="http://localhost:52697/Service1.svc?xsd=xsd0" namespace="http://wcfservicetest.org/Service1" />
+      <xsd:import schemaLocation="http://localhost:52697/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_InsertUserDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertUserDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateUserDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateUserDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getusercount_InputMessage">
+    <wsdl:part name="parameters" element="tns:getusercount" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getusercount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getusercountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ksoapAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:ksoapAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ksoapAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ksoapAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:addParam" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addParamResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="InsertUserDetails">
+      <wsdl:input wsaw:Action="http://wcfservicetest.org/Service1/IService1/InsertUserDetails" message="tns:IService1_InsertUserDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://wcfservicetest.org/Service1/IService1/InsertUserDetailsResponse" message="tns:IService1_InsertUserDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDetails">
+      <wsdl:input wsaw:Action="http://wcfservicetest.org/Service1/IService1/UpdateUserDetails" message="tns:IService1_UpdateUserDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://wcfservicetest.org/Service1/IService1/UpdateUserDetailsResponse" message="tns:IService1_UpdateUserDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getusercount">
+      <wsdl:input wsaw:Action="http://wcfservicetest.org/Service1/IService1/getusercount" message="tns:IService1_getusercount_InputMessage" />
+      <wsdl:output wsaw:Action="http://wcfservicetest.org/Service1/IService1/getusercountResponse" message="tns:IService1_getusercount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ksoapAdd">
+      <wsdl:input wsaw:Action="http://wcfservicetest.org/Service1/IService1/ksoapAdd" message="tns:IService1_ksoapAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://wcfservicetest.org/Service1/IService1/ksoapAddResponse" message="tns:IService1_ksoapAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addParam">
+      <wsdl:input wsaw:Action="http://wcfservicetest.org/Service1/IService1/addParam" message="tns:IService1_addParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://wcfservicetest.org/Service1/IService1/addParamResponse" message="tns:IService1_addParam_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertUserDetails">
+      <soap:operation soapAction="http://wcfservicetest.org/Service1/IService1/InsertUserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDetails">
+      <soap:operation soapAction="http://wcfservicetest.org/Service1/IService1/UpdateUserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getusercount">
+      <soap:operation soapAction="http://wcfservicetest.org/Service1/IService1/getusercount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ksoapAdd">
+      <soap:operation soapAction="http://wcfservicetest.org/Service1/IService1/ksoapAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addParam">
+      <soap:operation soapAction="http://wcfservicetest.org/Service1/IService1/addParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:52697/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
