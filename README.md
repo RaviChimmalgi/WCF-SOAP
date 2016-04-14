@@ -12,7 +12,7 @@ This project includes a SOAP service containing database functions which are use
 
 - TimeClockWP7 is the client windows phone 7 application
 - timeClockAndroid is the client android application
-- scriptTimeClock is the sql script for the databse used in the project
+- scriptTimeClock is the sql script for the database and stored procedures used in the project
 
 ## Features
 - Database manipulations(read/write) through SOAP Service
